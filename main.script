@@ -1,0 +1,43 @@
+imports
+import os, time, colorama
+from colorama import Fore
+
+banner = Fore.YELLOW + """
+██████╗░░█████╗░██████╗░██╗░░██╗░██████╗░███████╗███╗░░██╗
+██╔══██╗██╔══██╗██╔══██╗██║░██╔╝██╔════╝░██╔════╝████╗░██║
+██║░░██║██║░░██║██████╔╝█████═╝░██║░░██╗░█████╗░░██╔██╗██║
+██║░░██║██║░░██║██╔══██╗██╔═██╗░██║░░╚██╗██╔══╝░░██║╚████║
+██████╔╝╚█████╔╝██║░░██║██║░╚██╗╚██████╔╝███████╗██║░╚███║
+╚═════╝░░╚════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚═════╝░╚══════╝╚═╝░░╚══╝
+"""
+
+def dork():
+    print(banner)
+    world = input("Enter your word for the dork : ")
+    resultfile = open(f"Dork_Result_{world}.txt", "w")
+    resultfile.write(f"""--------------------
+dork list :
+0: "{world}"
+1: intitle:"{world}"
+2: intitle:"index of" "{world}"
+3: inurl:/{world}
+4: filetype:txt "{world}"
+5: filetype:db "{world}"
+6: filetype:mysql "{world}"
+7: filetype:png | "{world}"
+8: "{world}" filetype:yml "config/parameters.yml"
+9: "{world}" filetype:env
+10: "{world}" inurl:"/etc/main.cfg"
+11: You can modify the script to add more.
+--------------------
+                    """)
+    resultfile.close()
+    print(Fore.GREEN + "The file has been successfully created !")
+    time.sleep(1)  # import time
+    os.system('cls')
+    dork()
+ 
+
+
+if __name__ == "__main__":
+    dork()[/code]
